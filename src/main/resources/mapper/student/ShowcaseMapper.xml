@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.student.ShowCaseDao">
+
+    <insert id="insertShowcase" parameterType="com.example.demo.entity.student.Showcase">
+        insert into ${tableName}
+        (moduleType, moduleName, imgId, imgName, imgUrl, imgDesc, showAndHide, updateTime)
+        values
+        (#{showcase.moduleType},
+        #{showcase.moduleName},
+        #{showcase.imgId},
+        #{showcase.imgName},
+        #{showcase.imgUrl},
+        #{showcase.imgDesc},
+        #{showcase.showAndHide},
+        now())
+    </insert>
+
+    <select id="queryShowcase" resultType="com.example.demo.entity.student.Showcase">
+        select
+        moduleType, moduleName, imgId, imgName, imgUrl, imgDesc, showAndHide, updateTime
+        from ${tableName}
+        where
+        moduleType = #{moduleType} and imgId = #{imgId}
+    </select>
+
+    <select id="queryShowcases" resultType="com.example.demo.entity.student.Showcase">
+        select
+        moduleType, moduleName, imgId, imgName, imgUrl, imgDesc, showAndHide, updateTime
+        from ${tableName} order by moduleType, imgId + 0;
+    </select>
+
+    <update id="updateShowcase">
+        update ${tableName} set
+        moduleType = #{showcase.moduleType},
+        moduleName = #{showcase.moduleName},
+        imgId = #{showcase.imgId},
+        imgName = #{showcase.imgName},
+        imgUrl = #{showcase.imgUrl},
+        imgDesc = #{showcase.imgDesc},
+        showAndHide = #{showcase.showAndHide},
+        updateTime = now()
+        where
+        moduleType = #{showcase.moduleType} and imgId = #{showcase.imgId}
+    </update>
+
+    <delete id="deleteShowcase">
+        delete from ${tableName} where moduleType = #{moduleType} and imgId = #{imgId}
+    </delete>
+
+</mapper>
