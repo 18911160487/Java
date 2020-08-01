@@ -1,0 +1,14 @@
+2020-07-31 18:53:48.946 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 2132 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-07-31 18:53:48.947 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-07-31 19:13:19.618 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 9964 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-07-31 19:13:19.622 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-07-31 19:13:24.744 [restartedMain] INFO  com.example.demo.DemoApplication - Started DemoApplication in 6.319 seconds (JVM running for 8.652)
+2020-07-31 19:28:42.010 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 14196 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-07-31 19:28:42.016 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-07-31 19:28:46.928 [restartedMain] INFO  com.example.demo.DemoApplication - Started DemoApplication in 6.163 seconds (JVM running for 8.334)
+2020-07-31 20:22:31.341 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 4372 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-07-31 20:22:31.351 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:22:36.180 [restartedMain] INFO  com.example.demo.DemoApplication - Started DemoApplication in 6.033 seconds (JVM running for 8.971)
+2020-07-31 21:01:47.878 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 2532 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-07-31 21:01:47.893 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:01:52.939 [restartedMain] INFO  com.example.demo.DemoApplication - Started DemoApplication in 6.752 seconds (JVM running for 9.885)

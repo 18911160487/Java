@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <springProperty scope="context" name="log_home" source="tx.data.paths.log"/>
+
+    <property name="appname" value="DataManageSystem"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="infoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/info-%d{yyyy-MM-dd}.txt</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <!--打印成json格式-->
+            <!--<pattern>{"level":"%level","service":"${springAppName:-}","pid":"${PID:-}","thread":"%thread","class":"%logger{40}:%L","message": "%msg"}</pattern>-->
+        </encoder>
+    </appender>
+
+    <appender name="errorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/error-%d{yyyy-MM-dd}.txt</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="WARN"></root>
+
+    <logger name="com.example.demo" level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="infoFile"/>
+        <appender-ref ref="errorFile"/>
+    </logger>
+
+</configuration>

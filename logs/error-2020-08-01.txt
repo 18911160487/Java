@@ -1,0 +1,9 @@
+2020-08-01 02:02:42.209 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 9020 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-08-01 02:02:42.214 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-08-01 02:02:48.868 [restartedMain] INFO  com.example.demo.DemoApplication - Started DemoApplication in 8.263 seconds (JVM running for 11.237)
+2020-08-01 18:59:48.106 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 9020 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-08-01 18:59:48.106 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-08-01 18:59:53.387 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 9020 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-08-01 18:59:53.387 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+2020-08-01 18:59:58.678 [restartedMain] INFO  com.example.demo.DemoApplication - Starting DemoApplication on DESKTOP-I2OORM9 with PID 9020 (D:\project\demo\target\classes started by liuxiangpo in D:\project\demo)
+2020-08-01 18:59:58.678 [restartedMain] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
