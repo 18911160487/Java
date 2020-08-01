@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.student;
 
 import javax.sql.DataSource;
 
@@ -16,9 +16,9 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
 //只从com.stu.dao包下读取dao文件，并且该报下的dao使用本datasource
-@MapperScan(basePackages = "com.example.demo.dao.studentDao", sqlSessionTemplateRef = "baseSqlSessionTemplate")
+@MapperScan(basePackages = "com.example.demo.dao.student", sqlSessionTemplateRef = "studentSqlSessionTemplate")
 public class StudentConfiguration {
-    @Bean(name = "baseDataSource")
+    @Bean(name = "studentDataSource")
     //对于多数据源，必须制定primary，否则报错有2个datasource，并且，只能制定一个primary
     @Primary
     //从DB1Config从获取配置信息
@@ -31,9 +31,9 @@ public class StudentConfiguration {
         return ds;
     }
 
-    @Bean(name = "baseSqlSessionFactory")
+    @Bean(name = "studentSqlSessionFactory")
     @Primary
-    public SqlSessionFactory setSqlSessionFactory(@Qualifier("baseDataSource") DataSource dataSource) throws Exception {
+    public SqlSessionFactory setSqlSessionFactory(@Qualifier("studentDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         //指定mapper.xml文件存放位置
@@ -41,9 +41,9 @@ public class StudentConfiguration {
         return bean.getObject();
     }
 
-    @Bean(name = "baseSqlSessionTemplate")
+    @Bean(name = "studentSqlSessionTemplate")
     @Primary
-    public SqlSessionTemplate setSqlSessionTemplate(@Qualifier("baseSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate setSqlSessionTemplate(@Qualifier("studentSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

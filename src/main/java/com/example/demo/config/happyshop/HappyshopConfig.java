@@ -1,20 +1,13 @@
-package com.example.demo.config;
+package com.example.demo.config.happyshop;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-@Component
-/*指定配置文件名，默认从classpath下寻找该文件，也就是等同于classpath:dataSource.properties
- * 可以指定多个文件
- */
 
+@Component
 @PropertySource(value = { "application.yml" })
-/*
- * 指定前缀，读取的配置信息项必须包含该前缀，且除了前缀外，剩余的字段必须和实体类的属性名相同，
- * 才能完成银映射
- */
-@ConfigurationProperties(prefix = "spring.datasource.student")
-public class StudentConfig {
+@ConfigurationProperties(prefix = "spring.datasource.happyshop")
+public class HappyshopConfig {
     private String url;
     private String username;
     private String password;

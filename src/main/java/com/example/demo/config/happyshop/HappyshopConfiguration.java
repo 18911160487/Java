@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.happyshop;
 import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -13,9 +13,9 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
 //只从com.stu.test2dao包下读取dao文件，并且该报下的dao使用本datasource
-@MapperScan(basePackages = "com.example.demo.dao.happyshopDao", sqlSessionTemplateRef = "slaveSqlSessionTemplate")
+@MapperScan(basePackages = "com.example.demo.dao.happyshop", sqlSessionTemplateRef = "happyshopSqlSessionTemplate")
 public class HappyshopConfiguration {
-    @Bean(name = "slaveDataSource")
+    @Bean(name = "happyshopDataSource")
     @ConfigurationProperties(prefix = "spring.application.happyshop")
     public DataSource setDataSource(HappyshopConfig dbc) {
         DruidDataSource ds = new DruidDataSource();
@@ -26,16 +26,16 @@ public class HappyshopConfiguration {
         return ds;
     }
 
-    @Bean(name = "slaveSqlSessionFactory")
-    public SqlSessionFactory setSqlSessionFactory(@Qualifier("slaveDataSource") DataSource dataSource) throws Exception {
+    @Bean(name = "happyshopSqlSessionFactory")
+    public SqlSessionFactory setSqlSessionFactory(@Qualifier("happyshopDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/happyshop/*.xml"));
         return bean.getObject();
     }
 
-    @Bean(name = "slaveSqlSessionTemplate")
-    public SqlSessionTemplate setSqlSessionTemplate(@Qualifier("slaveSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    @Bean(name = "happyshopSqlSessionTemplate")
+    public SqlSessionTemplate setSqlSessionTemplate(@Qualifier("happyshopSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
